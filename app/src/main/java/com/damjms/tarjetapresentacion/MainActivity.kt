@@ -45,68 +45,75 @@ fun Greeting(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(Color(0xFFFFB366))
             .padding(bottom = 16.dp),
-        verticalArrangement = Arrangement.SpaceBetween,
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box{
+        // Contenedor para la imagen y el texto
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(50.dp)
+        ) {
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Logo",
-                modifier
+                modifier = Modifier
                     .size(200.dp)
             )
-        }
 
-        Column (
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxWidth().padding(50.dp)
-        ){
             Text(
                 text = "TARJETA DE PRESENTACION",
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
+                fontStyle = FontStyle.Italic,
+                modifier = Modifier.padding(top = 16.dp) // Espaciador entre la imagen y el texto
+            )
+        }
+
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp)
+        ) {
+            Icon(Icons.Rounded.Call, contentDescription = "")
+            Text(
+                text = "(+34) 974 33 22 11",
+                fontSize = 15.sp,
+                textAlign = TextAlign.Center,
                 fontStyle = FontStyle.Italic
             )
+        }
 
-            Row (
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth().padding(5.dp)
-            ){
-                Icon(Icons.Rounded.Call, contentDescription = "")
-                Text(
-                    text = "(+34) 974 33 22 11",
-                    fontSize = 15.sp,
-                    textAlign = TextAlign.Center,
-                    fontStyle = FontStyle.Italic
-                )
-            }
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp)
+        ) {
+            Icon(Icons.Rounded.Share, contentDescription = "")
+            Text(
+                text = "@AndroidDev",
+                fontSize = 15.sp,
+                textAlign = TextAlign.Center,
+                fontStyle = FontStyle.Italic
+            )
+        }
 
-            Row (
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth().padding(5.dp)
-            ){
-                Icon(Icons.Rounded.Share, contentDescription = "")
-                Text(
-                    text = "@AndroidDev",
-                    fontSize = 15.sp,
-                    textAlign = TextAlign.Center,
-                    fontStyle = FontStyle.Italic
-                )
-            }
-
-            Row (
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth().padding(5.dp)
-            ){
-                Icon(Icons.Rounded.Email, contentDescription = "")
-                Text(
-                    text = "170068@iessanalberto.com",
-                    fontSize = 15.sp,
-                    textAlign = TextAlign.Center,
-                    fontStyle = FontStyle.Italic
-                )
-            }
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp)
+        ) {
+            Icon(Icons.Rounded.Email, contentDescription = "")
+            Text(
+                text = "170068@iessanalberto.com",
+                fontSize = 15.sp,
+                textAlign = TextAlign.Center,
+                fontStyle = FontStyle.Italic
+            )
         }
     }
 }
